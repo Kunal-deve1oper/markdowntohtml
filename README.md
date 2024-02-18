@@ -26,7 +26,7 @@ The program depends on the following packages:
 ## Example
 
 ```bash
-go run main.go -f /path/to/input.md
+go run main.go -f ./kunal.md
 ```
 
 ## Output
@@ -37,4 +37,5 @@ The program will generate a index.html file.
 
 If there are any errors during parsing or conversion, the program will display an error message and exit with a non-zero status code.
 
-**Note:** This project is currently under development. Some features or functionalities may not be fully implemented yet.
+## Note
+This project is currently under development. Some features or functionalities may not be fully implemented yet.
