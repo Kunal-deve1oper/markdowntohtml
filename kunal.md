@@ -33,7 +33,7 @@ As [John Gruber] writes on the [Markdown site][df1]
 > or formatting instructions.
 
 This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the _left_ window and
+for Markdown's syntax, type some text into the _**left**_ window and
 watch the results in the right.
 
 ## Tech
