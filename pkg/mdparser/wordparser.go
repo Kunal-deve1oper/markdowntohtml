@@ -6,6 +6,11 @@ import (
 
 // ParseSentence parses a sentence and converts Markdown to HTML.
 func ParseSentence(line string) string {
+	// Check if the sentence contains a Markdown image
+	if userRegexp.Image.MatchString(line) {
+		line = userRegexp.Image.ReplaceAllString(line, `<img src="$2" alt="$1">`)
+	}
+
 	// Check if the sentence contains a Markdown link
 	if userRegexp.Link.MatchString(line) {
 		line = userRegexp.Link.ReplaceAllString(line, `<a href="$2">$1</a>`)
