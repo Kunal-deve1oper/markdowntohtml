@@ -25,8 +25,9 @@ func HeaderParser(line string) string {
 					res += string(line[i])
 					i++
 				}
-				first := fmt.Sprintf(`<h%v id="%v">`, count, res)
+				first := fmt.Sprintf(`<h%v>`, count)
 				last := fmt.Sprintf("</h%v>", count)
+				res = ParseSentence(res)
 				res = first + res + last
 				return res
 			} else {

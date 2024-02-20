@@ -51,7 +51,8 @@ func (t *MdToHtml) HtmlParser(fileContent []string) error {
 			t.FinalHtml += res
 			i++
 		} else {
-			t.FinalHtml += "<p>" + fileContent[i] + "</p>"
+			res := ParseSentence(fileContent[i])
+			t.FinalHtml += "<p>" + res + "</p>"
 			i++
 		}
 	}

@@ -14,8 +14,8 @@ AngularJS-powered HTML5 Markdown editor.
 
 ## Features
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
+- Import a HTML file and watch it _magically_ convert to Markdown
+- Drag and drop images (requires your **Dropbox** account be linked)
 - Import and save files from GitHub, Dropbox, Google Drive and One Drive
 - Drag and drop markdown and HTML files into Dillinger
 - Export documents as Markdown, HTML and PDF
@@ -33,7 +33,7 @@ As [John Gruber] writes on the [Markdown site][df1]
 > or formatting instructions.
 
 This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
+for Markdown's syntax, type some text into the _left_ window and
 watch the results in the right.
 
 ## Tech
