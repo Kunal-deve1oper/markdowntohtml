@@ -60,7 +60,7 @@ func (t *MdToHtml) HtmlParser(fileContent []string) error {
 			t.FinalHtml += res
 		} else {
 			res := ParseSentence(fileContent[i])
-			if res == "\n" {
+			if res == "" {
 				i++
 				continue
 			}
