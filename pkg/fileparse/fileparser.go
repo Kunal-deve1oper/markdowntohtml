@@ -21,13 +21,10 @@ func (f *FileContent) ParseMd(filename string) error {
 		ele := string(parsedData[i])
 		if ele == "\n" {
 			line := strings.TrimSpace(letter)
-			if line != "" {
-				f.Content = append(f.Content, line)
-			}
+			f.Content = append(f.Content, line)
 			for ele == "\n" {
 				i++
 				if i < len(parsedData) {
-					f.Content = append(f.Content, "\n")
 					ele = string(parsedData[i])
 				} else {
 					break

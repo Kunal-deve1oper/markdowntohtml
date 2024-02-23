@@ -42,7 +42,7 @@ func (t *MdToHtml) HtmlParser(fileContent []string) error {
 			temp := make([]string, 0)
 			i++
 			for i < len(fileContent) && !strings.HasPrefix(fileContent[i], "```") {
-				if fileContent[i] != "\n" {
+				if fileContent[i] != "" {
 					temp = append(temp, fileContent[i])
 				}
 				i++
@@ -50,8 +50,20 @@ func (t *MdToHtml) HtmlParser(fileContent []string) error {
 			res := CodeParser(temp)
 			t.FinalHtml += res
 			i++
+		} else if strings.HasPrefix(fileContent[i], ">") {
+			temp := make([]string, 0)
+			for i < len(fileContent) && strings.HasPrefix(fileContent[i], ">") && fileContent[i] != "" {
+				temp = append(temp, fileContent[i])
+				i++
+			}
+			res := QuoteParse(temp)
+			t.FinalHtml += res
 		} else {
 			res := ParseSentence(fileContent[i])
+			if res == "\n" {
+				i++
+				continue
+			}
 			t.FinalHtml += "<p>" + res + "</p>"
 			i++
 		}
