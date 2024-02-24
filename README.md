@@ -6,10 +6,34 @@ This Go program converts Markdown files to HTML.
 
 The program accepts a Markdown file as input and converts it to HTML.
 
+### Prerequisites
+
+Before using this tool, ensure that you have Go installed on your system.
+
+### Installation
+
+To install the tool, you need to have Go installed. Then, you can clone the repository and build the executable.
+
+```bash
+git clone https://github.com/Kunal-deve1oper/md-to-html.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd md-to-html
+```
+
+Build the project:
+
+```bash
+go build
+```
+
 ### Command Line Usage
 
 ```bash
-go run main.go -f <path_to_markdown_file>
+./md-to-list -f <path_to_markdown_file>
 ```
 
 ### Flags
@@ -26,12 +50,12 @@ The program depends on the following packages:
 ## Example
 
 ```bash
-go run main.go -f ./kunal.md
+./md-to-html -f ./kunal.md
 ```
 
 ## Output
 
-The program will generate a index.html file.
+The program will generate an index.html file.
 
 ## Errors
 
