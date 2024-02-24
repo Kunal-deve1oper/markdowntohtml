@@ -63,3 +63,4 @@ If there are any errors during parsing or conversion, the program will display a
 
 ## Note
 This project is currently under development. Some features or functionalities may not be fully implemented yet.
+Working on the table parser feature.
