@@ -1,4 +1,4 @@
-package main
+package mdtohtml
 
 import (
 	"github.com/Kunal-deve1oper/md-to-html/pkg/fileparse"
