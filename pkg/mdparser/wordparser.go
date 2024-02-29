@@ -1,7 +1,7 @@
 package mdparser
 
 import (
-	"github.com/Kunal-deve1oper/md-to-html/pkg/userRegexp"
+	"github.com/Kunal-deve1oper/markdowntohtml/pkg/userRegexp"
 )
 
 // ParseSentence parses a sentence and converts Markdown to HTML.

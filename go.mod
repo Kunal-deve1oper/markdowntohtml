@@ -1,3 +1,3 @@
-module github.com/Kunal-deve1oper/md-to-html
+module github.com/Kunal-deve1oper/markdowntohtml
 
 go 1.21.6
