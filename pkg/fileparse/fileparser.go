@@ -22,20 +22,14 @@ func (f *FileContent) ParseMd(filename string) error {
 		if ele == "\n" {
 			line := strings.TrimSpace(letter)
 			f.Content = append(f.Content, line)
-			for ele == "\n" {
-				i++
-				if i < len(parsedData) {
-					ele = string(parsedData[i])
-				} else {
-					break
-				}
-			}
 			letter = ""
 		} else {
-			i++
 			letter += ele
 		}
+		i++
 	}
-	f.Content = append(f.Content, " ")
+	if letter != "" {
+		f.Content = append(f.Content, letter)
+	}
 	return nil
 }
