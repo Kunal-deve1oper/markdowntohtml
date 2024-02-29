@@ -36,5 +36,6 @@ func (f *FileContent) ParseMd(filename string) error {
 			letter += ele
 		}
 	}
+	f.Content = append(f.Content, "")
 	return nil
 }
