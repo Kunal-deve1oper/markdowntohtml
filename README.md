@@ -1,66 +1,68 @@
 # Markdown to HTML Converter
 
-This Go program converts Markdown files to HTML.
+## Overview
+
+The `markdowntohtml` package provides functionalities to convert Markdown files to HTML format. It includes a `ConvertToFile` function that takes the path to a Markdown file as input and generates an `index.html` file containing the HTML representation of the Markdown content.
+
+## Installation
+
+To install the `markdowntohtml` package, you can use the following `go get` command:
+
+```go
+go get github.com/Kunal-deve1oper/markdowntohtml
+```
 
 ## Usage
 
-The program accepts a Markdown file as input and converts it to HTML.
+### Importing the Package
 
-### Prerequisites
+Import the package in your Go code:
 
-Before using this tool, ensure that you have Go installed on your system.
-
-### Installation
-
-To install the tool, you need to have Go installed. Then, you can clone the repository and build the executable.
-
-```bash
-git clone https://github.com/Kunal-deve1oper/md-to-html.git
+```go
+import (
+	"github.com/Kunal-deve1oper/markdowntohtml"
+)
 ```
 
-Navigate to the project directory:
+# Converting Markdown to HTML
 
-```bash
-cd md-to-html
+Use the ConvertToFile function to convert a Markdown file to HTML:
+
+```go
+err := markdowntohtml.ConvertToFile("path/to/markdownfile.md")
+if err != nil {
+    // Handle error
+}
 ```
 
-Build the project:
+This function reads the Markdown file located at the specified path, converts its contents to HTML, and saves the HTML output to an index.html file in the current directory.
 
-```bash
-go build
+# Example
+
+```go
+package main
+
+import (
+	"github.com/Kunal-deve1oper/markdowntohtml"
+)
+
+func main() {
+	err := markdowntohtml.ConvertToFile("example.md")
+	if err != nil {
+		// Handle error
+	}
+}
 ```
 
-### Command Line Usage
+# API Reference
 
-```bash
-./md-to-list -f <path_to_markdown_file>
-```
+### ConvertToFile(filename string) error
 
-### Flags
+- The ConvertToFile function takes the path to a Markdown file as its argument and generates an index.html file containing the HTML representation of the Markdown content.
+- filename: Path to the Markdown file to be converted.
+- Returns an error if any operation fails during the conversion process.
 
-- `-f`: Specifies the path to the Markdown file to be converted.
+# NOTE
 
-## Dependencies
-
-The program depends on the following packages:
-
-- [fileparse](https://github.com/Kunal-deve1oper/md-to-html/pkg/fileparse): This package provides functionality to parse Markdown files.
-- [mdparser](https://github.com/Kunal-deve1oper/md-to-html/pkg/mdparser): This package handles the conversion of Markdown to HTML.
-
-## Example
-
-```bash
-./md-to-html -f ./kunal.md
-```
-
-## Output
-
-The program will generate an index.html file.
-
-## Errors
-
-If there are any errors during parsing or conversion, the program will display an error message and exit with a non-zero status code.
-
-## Note
-This project is currently under development. Some features or functionalities may not be fully implemented yet.
-Working on the table parser feature.
+has all the necessary features and functions.
+Currently working on parsing table.
