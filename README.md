@@ -26,7 +26,7 @@ import (
 
 # Converting Markdown to HTML
 
-Use the ConvertToFile function to convert a Markdown file to HTML:
+Use the `ConvertToFile` function to convert a Markdown file to HTML:
 
 ```go
 err := markdowntohtml.ConvertToFile("path/to/markdownfile.md")
@@ -54,6 +54,75 @@ func main() {
 }
 ```
 
+Use the `ConvertToString` function to convert a Markdown file to HTML:
+
+```go
+res, err := markdowntohtml.ConvertToString("path to markdownfile.md")
+if err != nil {
+    // Handle error
+}
+fmt.Println(res)
+```
+
+Function takes path to the markdownfile as argument and give output of the HTML code as a string
+
+# Example
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/Kunal-deve1oper/markdowntohtml"
+)
+
+func main() {
+	res, err := markdowntohtml.ConvertToString("path to markdownfile.md")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(res)
+}
+```
+
+Use the `ConvertInputToString` function to convert a input slice of sting to HTML:
+
+```go
+res, err := markdowntohtml.ConvertInputToString("takes input a string slice")
+if err != nil {
+    // Handle error
+}
+fmt.Println(res)
+```
+
+ConvertInputToString takes a slice of strings where each element represents a line of Markdown content. The function will process each line of this input slice and convert it into HTML code.
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/Kunal-deve1oper/markdowntohtml"
+)
+
+func main() {
+	temp := make([]string, 0)
+	temp = append(temp, "```")
+	temp = append(temp, "npm install multer")
+	temp = append(temp, "```")
+	temp = append(temp, "___Hello___")
+
+	res, err := markdowntohtml.ConvertInputToString(temp)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(res)
+}
+
+```
+
 # API Reference
 
 ### ConvertToFile(filename string) error
@@ -61,6 +130,17 @@ func main() {
 - The ConvertToFile function takes the path to a Markdown file as its argument and generates an index.html file containing the HTML representation of the Markdown content.
 - filename: Path to the Markdown file to be converted.
 - Returns an error if any operation fails during the conversion process.
+
+### ConvertToString(filename string) (string, error)
+
+- The ConvertToFile function takes the path to a Markdown file as its argument and generates an index.html file containing the HTML representation of the Markdown content.
+- filename: Path to the Markdown file to be converted.
+- Returns an error if any operation fails during the conversion process.
+
+### ConvertInputToString(input []string) (string, error)
+- The ConvertInputToString function takes a slice of strings representing Markdown content and converts it into HTML format.
+- input: A slice of strings where each element represents a line of Markdown content.
+- Returns the resulting HTML string and an error if any operation fails during the conversion process.
 
 # NOTE
 

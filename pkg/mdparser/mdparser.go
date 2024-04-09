@@ -1,7 +1,6 @@
 package mdparser
 
 import (
-	"os"
 	"strings"
 )
 
@@ -9,17 +8,7 @@ type MdToHtml struct {
 	FinalHtml string
 }
 
-func (t *MdToHtml) HtmlParser(fileContent []string) error {
-	t.FinalHtml += `<!DOCTYPE html>
-	<html lang="en">
-	  <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>HTML 5 Boilerplate</title>
-		<link rel="stylesheet" href="style.css">
-	  </head>
-	  <body>`
+func (t *MdToHtml) HtmlParser(fileContent []string) (string, error) {
 	i := 0
 	for i < len(fileContent) {
 		if strings.HasPrefix(fileContent[i], "#") {
@@ -68,11 +57,5 @@ func (t *MdToHtml) HtmlParser(fileContent []string) error {
 			i++
 		}
 	}
-	t.FinalHtml += `</body>
-	</html>`
-	err := os.WriteFile("./index.html", []byte(t.FinalHtml), 0644)
-	if err != nil {
-		return err
-	}
-	return nil
+	return t.FinalHtml, nil
 }
